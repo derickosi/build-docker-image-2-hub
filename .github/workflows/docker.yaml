@@ -24,5 +24,6 @@ jobs:
       - name: build a docker image
         run: docker build -t $IMAGE_NAME
         run: docker tag $IMAGE_NAME $DOCKERHUB_REPOSITORY:$IMAGE_NAME
+        
       - name: push to dockerhub
         run: docker push $DOCKERHUB_REPOSITORY:$IMAGE_NAME
