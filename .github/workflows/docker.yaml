@@ -22,7 +22,8 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME}}
           password: ${{secrets.DOCKERHUB_TOKEN}}
       - name: build a docker image
-        run: docker build -f $IMAGE_NAME -t Documents/devenv/Healet Free Website Template - Free-CSS.com/.github/workflows .
+        run: docker build -t $IMAGE_NAME
+        #-f $IMAGE_NAME -t Documents/devenv/Healet Free Website Template - Free-CSS.com/.github/workflows .
         run: docker tag $IMAGE_NAME $DOCKERHUB_REPOSITORY:$IMAGE_NAME
       - name: push to dockerhub
         run: docker push $DOCKERHUB_REPOSITORY:$IMAGE_NAME
